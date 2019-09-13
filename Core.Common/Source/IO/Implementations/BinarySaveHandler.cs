@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Core.SaveSystem
+namespace Core.Common
 {
     /// <inheritdoc />
     /// Saves data to binary format

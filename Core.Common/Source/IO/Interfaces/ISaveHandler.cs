@@ -1,6 +1,4 @@
-﻿using Core.Common;
-
-namespace Core.SaveSystem
+﻿namespace Core.Common
 {
     /// <summary>
     /// Handles saving of data

@@ -1,14 +1,13 @@
-﻿using Core.Common;
-using System;
+﻿using System;
 using System.IO;
 
-namespace Core.SaveSystem
+namespace Core.Common
 {
-    public abstract class BaseLoadHandler : ILoadHandler
+    public abstract class BaseSaveHandler : ISaveHandler
     {
         #region Protected Fields
 
-        protected string loadDirectory;
+        protected string saveDirectory;
         protected readonly Subject<string> logObservable;
 
         #endregion Protected Fields
@@ -21,19 +20,19 @@ namespace Core.SaveSystem
 
         #region Constructors
 
-        protected BaseLoadHandler()
+        protected BaseSaveHandler()
         {
-            loadDirectory = string.Empty;
+            saveDirectory = string.Empty;
             logObservable = new Subject<string>();
         }
 
         #endregion Constructors
 
-        #region ILoadHandler Methods
+        #region ISaveHandler Methods
 
-        public virtual bool SetLoadDirectory(string directory)
+        public bool SetSaveDirectory(string directory)
         {
-            loadDirectory = directory;
+            saveDirectory = directory;
 
             if (Directory.Exists(directory))
                 return true;
@@ -43,21 +42,21 @@ namespace Core.SaveSystem
             }
             catch (Exception e)
             {
-                Log($"An error has occured while setting the load directory: {e.Message}");
+                Log($"An error has occured while setting the save directory: {e.Message}");
                 return false;
             }
 
-            Log("Load Directory successfully configured!");
+            Log("Save Directory successfully configured!");
             return true;
         }
 
-        public abstract T Load<T>(string fileName, string extension) where T : IDefault, new();
+        public abstract bool Save(SaveData obj, string overrideName = "savefile", string extension = "bin");
 
-        #endregion ILoadHandler Methods
+        #endregion ISaveHandler Methods
 
         #region Private Methods
 
-        protected virtual void Log(string log)
+        protected void Log(string log)
         {
             logObservable.OnNext(log);
         }
