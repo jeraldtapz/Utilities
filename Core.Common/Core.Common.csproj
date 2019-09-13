@@ -44,21 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IO\Data\SaveData.cs" />
-    <Compile Include="IO\Implementations\BaseLoadHandler.cs" />
-    <Compile Include="IO\Implementations\BaseSaveHandler.cs" />
-    <Compile Include="IO\Implementations\BinaryLoadHandler.cs" />
-    <Compile Include="IO\Implementations\BinarySaveHandler.cs" />
-    <Compile Include="IO\Implementations\JsonLoadHandler.cs" />
-    <Compile Include="IO\Implementations\JsonSaveHandler.cs" />
-    <Compile Include="IO\Interfaces\ILoadHandler.cs" />
-    <Compile Include="IO\Interfaces\ISaveHandler.cs" />
-    <Compile Include="Log\ILogger.cs" />
-    <Compile Include="Observable\Observable.cs" />
-    <Compile Include="Observable\ObservableExtensions.cs" />
-    <Compile Include="Observable\Unit.cs" />
+    <Compile Include="Source\IO\Data\SaveData.cs" />
+    <Compile Include="Source\IO\Implementations\BaseLoadHandler.cs" />
+    <Compile Include="Source\IO\Implementations\BaseSaveHandler.cs" />
+    <Compile Include="Source\IO\Implementations\BinaryLoadHandler.cs" />
+    <Compile Include="Source\IO\Implementations\BinarySaveHandler.cs" />
+    <Compile Include="Source\IO\Implementations\JsonLoadHandler.cs" />
+    <Compile Include="Source\IO\Implementations\JsonSaveHandler.cs" />
+    <Compile Include="Source\IO\Interfaces\ILoadHandler.cs" />
+    <Compile Include="Source\IO\Interfaces\ISaveHandler.cs" />
+    <Compile Include="Source\Log\ILogger.cs" />
+    <Compile Include="Source\Observable\Observable.cs" />
+    <Compile Include="Source\Observable\ObservableExtensions.cs" />
+    <Compile Include="Source\Observable\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\IDefault.cs" />
+    <Compile Include="Source\Utils\IDefault.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

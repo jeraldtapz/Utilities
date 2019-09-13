@@ -1,8 +1,7 @@
-﻿using Core.Common;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 
-namespace Core.SaveSystem
+namespace Core.Common
 {
     [Serializable]
     public class SaveData : IDefault

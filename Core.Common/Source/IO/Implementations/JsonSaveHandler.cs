@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Core.SaveSystem
+namespace Core.Common
 {
     public class JsonSaveHandler : BaseSaveHandler
     {
