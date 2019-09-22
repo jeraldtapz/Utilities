@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\FSM\FSM.cs" />
+    <Compile Include="Source\FSM\FSMState.cs" />
+    <Compile Include="Source\FSM\IState.cs" />
     <Compile Include="Source\IO\Data\SaveData.cs" />
     <Compile Include="Source\IO\Implementations\BaseLoadHandler.cs" />
     <Compile Include="Source\IO\Implementations\BaseSaveHandler.cs" />
@@ -58,6 +61,7 @@
     <Compile Include="Source\Observable\ObservableExtensions.cs" />
     <Compile Include="Source\Observable\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Utils\EnumerableExtensions.cs" />
     <Compile Include="Source\Utils\IDefault.cs" />
   </ItemGroup>
   <ItemGroup>
