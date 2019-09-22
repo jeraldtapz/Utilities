@@ -5,7 +5,7 @@ namespace Core.Common
 {
     public class FSMStateNotFoundException : Exception
     {
-        public FSMStateNotFoundException(string fsmName, string stateName) 
+        public FSMStateNotFoundException(string fsmName, string stateName)
             : base($"FSM with name {fsmName} doesn't contain a state with a name {stateName}.")
         {
         }
@@ -16,16 +16,15 @@ namespace Core.Common
         public string FsmName { get; }
 
         private readonly Dictionary<int, IState> statesLookupMap;
-        private readonly Dictionary<int, List<int>> stateTransitionMap;
+        private readonly Dictionary<int, HashSet<int>> stateTransitionMap;
 
         private readonly Subject<string> logObservable;
         public IObservable<string> LogObservable => logObservable;
 
-
         public FSM(string fsmName)
         {
             statesLookupMap = new Dictionary<int, IState>();
-            stateTransitionMap = new Dictionary<int, List<int>>();
+            stateTransitionMap = new Dictionary<int, HashSet<int>>();
             logObservable = new Subject<string>();
             FsmName = fsmName;
         }
@@ -41,23 +40,20 @@ namespace Core.Common
             int fromStateHash = fromState.Name.GetHashCode();
             int toStateHash = toState.Name.GetHashCode();
 
-            if(!statesLookupMap.ContainsKey(fromStateHash))
+            if (!statesLookupMap.ContainsKey(fromStateHash))
                 throw new FSMStateNotFoundException(FsmName, fromState.Name);
 
             if (!statesLookupMap.ContainsKey(toStateHash))
                 throw new FSMStateNotFoundException(FsmName, toState.Name);
 
-            List<int> stateTransitions = stateTransitionMap[fromStateHash];
-
-            if (stateTransitions == null)
+            if (!stateTransitionMap.ContainsKey(fromStateHash))
             {
-                stateTransitions = new List<int>();
-                stateTransitionMap[fromStateHash] = stateTransitions;
+                stateTransitionMap[fromStateHash] = new HashSet<int>();
             }
 
-            if (!stateTransitions.Contains(toStateHash))
+            if (!stateTransitionMap[fromStateHash].Contains(toStateHash))
             {
-                stateTransitions.Add(toStateHash);
+                stateTransitionMap[fromStateHash].Add(toStateHash);
             }
         }
     }
