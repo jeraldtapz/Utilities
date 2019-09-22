@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -28,7 +27,7 @@ namespace Core.Common
 
         public static void SafeAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
-            if(!dictionary.ContainsKey(key))
+            if (!dictionary.ContainsKey(key))
             {
                 dictionary.Add(key, value);
             }
