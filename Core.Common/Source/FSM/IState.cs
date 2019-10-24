@@ -4,6 +4,8 @@
     {
         string Name { get; }
 
+        IFSMData Data { get; }
+
         void OnEnter();
 
         void OnUpdate();

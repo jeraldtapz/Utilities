@@ -6,16 +6,18 @@ namespace Core.Common
     public class FSMState : IState
     {
         public string Name { get; protected set; }
+        public IFSMData Data { get; protected set; }
         private readonly List<Action> onEnterActions;
         private readonly List<Action> onUpdateActions;
         private readonly List<Action> onExitActions;
 
-        public FSMState(string name, List<Action> onEnterActions, List<Action> onUpdateActions, List<Action> onExitActions)
+        public FSMState(string name, IFSMData data)
         {
             Name = name;
-            this.onEnterActions = onEnterActions ?? new List<Action>(1);
-            this.onUpdateActions = onUpdateActions ?? new List<Action>(1);
-            this.onExitActions = onExitActions ?? new List<Action>(1);
+            Data = data;
+            onEnterActions = new List<Action>(1);
+            onUpdateActions =  new List<Action>(1);
+            onExitActions = new List<Action>(1);
         }
 
         public void OnEnter()

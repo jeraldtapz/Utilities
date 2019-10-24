@@ -46,6 +46,10 @@
   <ItemGroup>
     <Compile Include="Source\FSM\FSM.cs" />
     <Compile Include="Source\FSM\FSMState.cs" />
+    <Compile Include="Source\FSM\IFSMData.cs" />
+    <Compile Include="Source\FSM\IFSMDataUser.cs" />
+    <Compile Include="Source\FSM\ISequentialState.cs" />
+    <Compile Include="Source\FSM\ISequentialStateData.cs" />
     <Compile Include="Source\FSM\IState.cs" />
     <Compile Include="Source\IO\Data\SaveData.cs" />
     <Compile Include="Source\IO\Implementations\BaseLoadHandler.cs" />
