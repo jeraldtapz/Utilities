@@ -1,0 +1,11 @@
+﻿namespace Core.Common
+{
+    public interface IActivatable
+    {
+        bool IsActive { get; }
+
+        void Activate();
+
+        void Deactivate();
+    }
+}

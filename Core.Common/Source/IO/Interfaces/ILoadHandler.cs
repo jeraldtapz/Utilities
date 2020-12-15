@@ -3,7 +3,7 @@
     /// <summary>
     /// Handles loading of saved data
     /// </summary>
-    public interface ILoadHandler : ILogger
+    public interface ILoadHandler
     {
         bool SetLoadDirectory(string directory);
 

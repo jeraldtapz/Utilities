@@ -25,7 +25,7 @@ namespace Core.Common
         }
     }
 
-    public class FSM : ILogger
+    public class FSM
     {
         #region Public Properties
 

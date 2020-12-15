@@ -3,7 +3,7 @@
     /// <summary>
     /// Handles saving of data
     /// </summary>
-    public interface ISaveHandler : ILogger
+    public interface ISaveHandler
     {
         bool SetSaveDirectory(string directory);
 

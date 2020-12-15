@@ -51,6 +51,9 @@
     <Compile Include="Source\FSM\ISequentialState.cs" />
     <Compile Include="Source\FSM\ISequentialStateData.cs" />
     <Compile Include="Source\FSM\IState.cs" />
+    <Compile Include="Source\Initialization\Interfaces\IActivatable.cs" />
+    <Compile Include="Source\Initialization\Interfaces\ICompositeInitializable.cs" />
+    <Compile Include="Source\Initialization\Interfaces\IInitializable.cs" />
     <Compile Include="Source\IO\Data\SaveData.cs" />
     <Compile Include="Source\IO\Implementations\BaseLoadHandler.cs" />
     <Compile Include="Source\IO\Implementations\BaseSaveHandler.cs" />
@@ -60,9 +63,9 @@
     <Compile Include="Source\IO\Implementations\JsonSaveHandler.cs" />
     <Compile Include="Source\IO\Interfaces\ILoadHandler.cs" />
     <Compile Include="Source\IO\Interfaces\ISaveHandler.cs" />
-    <Compile Include="Source\Log\ILogger.cs" />
     <Compile Include="Source\Observable\Observable.cs" />
     <Compile Include="Source\Observable\ObservableExtensions.cs" />
+    <Compile Include="Source\Observable\ObservableFloat.cs" />
     <Compile Include="Source\Observable\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Utils\EnumerableExtensions.cs" />

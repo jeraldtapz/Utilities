@@ -10,6 +10,8 @@
 
         void OnUpdate();
 
+        void OnFixedUpdate();
+
         void OnExit();
     }
 }

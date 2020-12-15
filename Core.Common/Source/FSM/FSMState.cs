@@ -9,6 +9,7 @@ namespace Core.Common
         public IFSMData Data { get; protected set; }
         private readonly List<Action> onEnterActions;
         private readonly List<Action> onUpdateActions;
+        private readonly List<Action> onFixedUpdateActions;
         private readonly List<Action> onExitActions;
 
         public FSMState(string name, IFSMData data)
@@ -17,6 +18,7 @@ namespace Core.Common
             Data = data;
             onEnterActions = new List<Action>(1);
             onUpdateActions =  new List<Action>(1);
+            onFixedUpdateActions = new List<Action>(1);
             onExitActions = new List<Action>(1);
         }
 
@@ -28,6 +30,11 @@ namespace Core.Common
         public void OnUpdate()
         {
             onUpdateActions.ForEach(x => x.Invoke());
+        }
+
+        public void OnFixedUpdate()
+        {
+            onFixedUpdateActions.ForEach(x => x.Invoke());
         }
 
         public void OnExit()
@@ -43,6 +50,11 @@ namespace Core.Common
         public void AddOnUpdateAction(Action action)
         {
             onUpdateActions.Add(action);
+        }
+
+        public void AddOnFixedUpdateAction(Action action)
+        {
+            onFixedUpdateActions.Add(action);
         }
 
         public void AddOnExitAction(Action action)
